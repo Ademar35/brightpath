@@ -1,0 +1,134 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Parent {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime  @default(now())
+  students     Student[]
+  sessions     Session[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  parentId  String
+  parent    Parent   @relation(fields: [parentId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+}
+
+model Student {
+  id            String           @id @default(cuid())
+  parentId      String
+  parent        Parent           @relation(fields: [parentId], references: [id], onDelete: Cascade)
+  firstName     String
+  grade         Int
+  avatar        String           @default("🦊")
+  pin           String           @default("1234")
+  buddyId       String           @default("nova")
+  points        Int              @default(0)
+  streak        Int              @default(0)
+  lastActiveDay String?
+  createdAt     DateTime         @default(now())
+  attempts      Attempt[]
+  masteries     SkillMastery[]
+  pathItems     LessonPlanItem[]
+  chatMessages  ChatMessage[]
+  diagnostics   DiagnosticState[]
+}
+
+model Skill {
+  id           String           @id
+  subject      String // math | reading | science | social
+  grade        Int
+  order        Int
+  name         String
+  description  String
+  lesson       String // markdown lesson content
+  prereqIds    String           @default("") // comma-separated skill ids
+  questions    Question[]
+  masteries    SkillMastery[]
+  pathItems    LessonPlanItem[]
+}
+
+model Question {
+  id             String    @id @default(cuid())
+  skillId        String
+  skill          Skill     @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  difficulty     Int // 1-5
+  prompt         String
+  choices        String // JSON array of strings
+  answerIndex    Int
+  explanation    String
+  misconceptions String    @default("[]") // JSON array: misconception tag per wrong choice index
+  attempts       Attempt[]
+}
+
+model Attempt {
+  id               String   @id @default(cuid())
+  studentId        String
+  student          Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  questionId       String
+  question         Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  correct          Boolean
+  answerIndex      Int
+  misconceptionTag String?
+  context          String   @default("practice") // diagnostic | practice
+  createdAt        DateTime @default(now())
+}
+
+model SkillMastery {
+  id        String   @id @default(cuid())
+  studentId String
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  skillId   String
+  skill     Skill    @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  score     Int      @default(0) // 0-100
+  status    String   @default("ready") // ready | in-progress | mastered
+  updatedAt DateTime @updatedAt
+
+  @@unique([studentId, skillId])
+}
+
+model LessonPlanItem {
+  id          String    @id @default(cuid())
+  studentId   String
+  student     Student   @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  skillId     String
+  skill       Skill     @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  subject     String
+  order       Int
+  reason      String
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@unique([studentId, skillId])
+}
+
+model ChatMessage {
+  id        String   @id @default(cuid())
+  studentId String
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  role      String // user | assistant
+  content   String
+  mode      String   @default("homework") // homework | practice
+  createdAt DateTime @default(now())
+}
+
+model DiagnosticState {
+  id        String   @id @default(cuid())
+  studentId String
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  subject   String
+  completed Boolean  @default(false)
+
+  @@unique([studentId, subject])
+}

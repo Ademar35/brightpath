@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f0f9ff;
+  --foreground: #1e293b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), Arial, Helvetica, sans-serif;
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.9) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-pop-in { animation: pop-in 0.25s ease-out; }
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(240px) rotate(540deg); opacity: 0; }
+}
+.animate-confetti { animation: confetti-fall 1.2s ease-in forwards; }
+
+.lesson-content h2 { font-family: var(--font-display), sans-serif; font-size: 1.35rem; font-weight: 700; margin-top: 1rem; margin-bottom: 0.5rem; color: #4338ca; }
+.lesson-content p { margin-bottom: 0.75rem; line-height: 1.6; }
+.lesson-content strong { color: #4338ca; font-weight: 800; }
+.lesson-content code { background: #ede9fe; padding: 0.15rem 0.4rem; border-radius: 0.35rem; font-family: var(--font-mono, monospace); }
+.lesson-content pre { background: #1e1b4b; color: #e0e7ff; padding: 0.75rem 1rem; border-radius: 0.75rem; overflow-x: auto; margin-bottom: 0.75rem; }
+.lesson-content pre code { background: transparent; padding: 0; }
