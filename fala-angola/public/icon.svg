@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0f0d0b"/>
+  <rect x="0" y="392" width="512" height="40" fill="#d6262f"/>
+  <rect x="0" y="432" width="512" height="40" fill="#111"/>
+  <path d="M0 392 l32 -24 l32 24 l32 -24 l32 24 l32 -24 l32 24 l32 -24 l32 24 l32 -24 l32 24 l32 -24 l32 24 l32 -24 l32 24 l32 -24 l32 24z" fill="#f2b705"/>
+  <text x="256" y="300" text-anchor="middle" font-family="Archivo, Arial Black, sans-serif" font-weight="900" font-size="210" fill="#f4ead9">FA</text>
+</svg>

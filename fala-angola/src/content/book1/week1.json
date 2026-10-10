@@ -1,0 +1,425 @@
+{
+  "id": "b1w1",
+  "number": 1,
+  "unit": "Unidade 1",
+  "title": "Olá! Eu sou a Isa!",
+  "titleEn": "Hello! I'm Isa!",
+  "tagline": "You just landed in Luanda. Isa is your guide. Learn to greet anyone, any time of day.",
+  "grammar": ["Verbo ser", "Pronomes pessoais", "Género (o / a)"],
+  "vocabulary": ["Saudações e despedidas", "Números 0 a 10", "Dias da semana"],
+  "sounds": ["-ão"],
+  "mission": "Bom dia, Luanda: get through a full day of greetings, from the morning market to your neighbour at night.",
+  "lessons": [
+    {
+      "id": "b1w1d1",
+      "day": 1,
+      "kind": "cena",
+      "title": "Chegada",
+      "subtitle": "Meet Isa. Guess before you learn.",
+      "minutes": 8,
+      "activities": [
+        {
+          "type": "choice",
+          "id": "w1d1-pre1",
+          "question": "Guess first. It is 8 o'clock in the morning. People in Luanda say...",
+          "options": ["Bom dia", "Boa noite", "Tchau"],
+          "answer": 0,
+          "explain": "Bom dia = good morning. Guessing first, even wrongly, helps you remember the answer.",
+          "say": "Bom dia"
+        },
+        {
+          "type": "scene",
+          "id": "w1d1-scene",
+          "title": "Aeroporto, 08:10",
+          "setting": "Arrivals hall, Luanda. Isa is holding a sign with your name.",
+          "lines": [
+            { "who": "Isa", "pt": "Olá! Bom dia! Eu sou a Isa.", "en": "Hi! Good morning! I'm Isa." },
+            { "who": "Você", "pt": "Bom dia! Eu sou o Tom.", "en": "Good morning! I'm Tom." },
+            { "who": "Isa", "pt": "Muito prazer, Tom! Eu sou professora. Sou de Luanda.", "en": "Very nice to meet you, Tom! I'm a teacher. I'm from Luanda." },
+            { "who": "Você", "pt": "O prazer é todo meu. Eu sou estudante de português.", "en": "The pleasure is all mine. I'm a student of Portuguese." },
+            { "who": "Isa", "pt": "Hoje é segunda-feira. Bem-vindo a Angola!", "en": "Today is Monday. Welcome to Angola!" }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "w1d1-c1",
+          "question": "What does Isa do?",
+          "options": ["Ela é professora.", "Ela é médica.", "Ela é estudante."],
+          "answer": 0,
+          "explain": "\"Eu sou professora\" = I am a teacher."
+        },
+        {
+          "type": "choice",
+          "id": "w1d1-c2",
+          "question": "What day is it today?",
+          "options": ["Sexta-feira", "Segunda-feira", "Domingo"],
+          "answer": 1,
+          "explain": "\"Hoje é segunda-feira\" = Today is Monday."
+        },
+        {
+          "type": "truefalse",
+          "id": "w1d1-tf1",
+          "statement": "Isa é de Luanda.",
+          "answer": true,
+          "explain": "\"Sou de Luanda\" = I'm from Luanda."
+        },
+        {
+          "type": "repeat",
+          "id": "w1d1-r1",
+          "pt": "Muito prazer!",
+          "en": "Very nice to meet you!"
+        }
+      ]
+    },
+    {
+      "id": "b1w1d2",
+      "day": 2,
+      "kind": "frases",
+      "title": "Eu sou, tu és",
+      "subtitle": "The verb ser, the days and the sound -ão.",
+      "minutes": 12,
+      "activities": [
+        {
+          "type": "card",
+          "id": "w1d2-ser",
+          "title": "Verbo SER (to be: who or what you are)",
+          "speakPairs": true,
+          "rows": [["Eu", "sou"], ["Tu", "és"], ["Você", "é"], ["Ele / Ela", "é"], ["Nós", "somos"], ["Vocês", "são"], ["Eles / Elas", "são"]],
+          "note": "In Angola, use você or o senhor / a senhora with people you don't know and with elders. Tu is for friends and family."
+        },
+        { "type": "repeat", "id": "w1d2-r1", "pt": "Eu sou estudante.", "en": "I am a student." },
+        { "type": "repeat", "id": "w1d2-r2", "pt": "Nós somos vizinhos.", "en": "We are neighbours." },
+        {
+          "type": "gap",
+          "id": "w1d2-g1",
+          "before": "Eu",
+          "after": "motorista de táxi em Luanda.",
+          "options": ["sou", "é", "somos"],
+          "answer": "sou",
+          "en": "I am a taxi driver in Luanda."
+        },
+        {
+          "type": "gap",
+          "id": "w1d2-g2",
+          "before": "Ela",
+          "after": "vendedora no mercado do Roque Santeiro.",
+          "options": ["és", "é", "são"],
+          "answer": "é",
+          "en": "She is a seller at the Roque Santeiro market."
+        },
+        {
+          "type": "gap",
+          "id": "w1d2-g3",
+          "before": "Nós",
+          "after": "vizinhos aqui no bairro.",
+          "options": ["somos", "sou", "são"],
+          "answer": "somos",
+          "en": "We are neighbours here in the neighbourhood."
+        },
+        {
+          "type": "gap",
+          "id": "w1d2-g4",
+          "before": "Você",
+          "after": "novo na cidade?",
+          "options": ["és", "é", "sou"],
+          "answer": "é",
+          "en": "Are you new in the city?"
+        },
+        {
+          "type": "gap",
+          "id": "w1d2-g5",
+          "before": "Eles",
+          "after": "estudantes universitários.",
+          "options": ["é", "somos", "são"],
+          "answer": "são",
+          "en": "They are university students."
+        },
+        {
+          "type": "card",
+          "id": "w1d2-gen",
+          "title": "O ou A? Every noun is masculine or feminine",
+          "rows": [["-o, -el, -al, -ol, -ul", "usually masculine", "o carro, o papel"], ["-a", "usually feminine", "a casa, a mesa"], ["Watch out", "o dia, o mapa", "end in -a but are masculine"]]
+        },
+        {
+          "type": "gap",
+          "id": "w1d2-g6",
+          "before": "",
+          "after": "enfermeira do hospital.",
+          "options": ["A", "O"],
+          "answer": "A",
+          "en": "The nurse at the hospital."
+        },
+        {
+          "type": "gap",
+          "id": "w1d2-g7",
+          "before": "",
+          "after": "vizinho do bairro.",
+          "options": ["A", "O"],
+          "answer": "O",
+          "en": "The neighbour (man) from the neighbourhood."
+        },
+        {
+          "type": "card",
+          "id": "w1d2-dias",
+          "title": "Dias da semana",
+          "rows": [["segunda-feira", "Monday"], ["terça-feira", "Tuesday"], ["quarta-feira", "Wednesday"], ["quinta-feira", "Thursday"], ["sexta-feira", "Friday"], ["sábado", "Saturday"], ["domingo", "Sunday"]],
+          "note": "Sábado and domingo are the fim de semana (weekend). The week starts on segunda-feira."
+        },
+        {
+          "type": "card",
+          "id": "w1d2-ao",
+          "title": "The sound -ão",
+          "body": "Say \"ow\" (as in \"now\") through your nose. Pinch your nose while you say it: if it buzzes, you've got it.",
+          "rows": [["pão", "bread"], ["irmão", "brother"], ["coração", "heart"], ["feijão", "beans"], ["estação", "station"], ["limão", "lemon"], ["mão", "hand"], ["camião", "lorry"]]
+        },
+        { "type": "repeat", "id": "w1d2-r3", "pt": "pão, mão, irmão", "en": "bread, hand, brother", "focus": "ão" },
+        { "type": "repeat", "id": "w1d2-r4", "pt": "O meu irmão compra pão na estação.", "en": "My brother buys bread at the station.", "focus": "ão" }
+      ]
+    },
+    {
+      "id": "b1w1d3",
+      "day": 3,
+      "kind": "jogos",
+      "title": "Hora Certa",
+      "subtitle": "Fast games. Beat the clock.",
+      "minutes": 10,
+      "activities": [
+        {
+          "type": "game",
+          "id": "w1d3-hora",
+          "game": "hora-certa",
+          "rounds": [
+            { "time": "07:30", "scene": "You walk into the market.", "options": ["Bom dia", "Boa tarde", "Boa noite"], "answer": "Bom dia" },
+            { "time": "15:00", "scene": "You arrive at the bank.", "options": ["Bom dia", "Boa tarde", "Boa noite"], "answer": "Boa tarde" },
+            { "time": "21:00", "scene": "You see your neighbour on the stairs.", "options": ["Boa tarde", "Boa noite", "Bom dia"], "answer": "Boa noite" },
+            { "time": "17:45", "scene": "You leave school. See you tomorrow!", "options": ["Olá", "Até amanhã", "Bom dia"], "answer": "Até amanhã" },
+            { "time": "06:50", "scene": "Your friend calls very early.", "options": ["Boa noite", "Bom dia", "Tchau"], "answer": "Bom dia" },
+            { "time": "13:10", "scene": "You're leaving a café right now.", "options": ["Tchau, até logo", "Olá", "Boa noite"], "answer": "Tchau, até logo" },
+            { "time": "22:30", "scene": "You're going to bed.", "options": ["Boa tarde", "Bom dia", "Boa noite"], "answer": "Boa noite" },
+            { "time": "12:30", "scene": "Lunchtime. You greet the waiter.", "options": ["Boa tarde", "Bom dia", "Boa noite"], "answer": "Boa tarde" }
+          ]
+        },
+        {
+          "type": "game",
+          "id": "w1d3-pares",
+          "game": "pares",
+          "pairs": [["1", "um"], ["2", "dois"], ["3", "três"], ["4", "quatro"], ["5", "cinco"], ["6", "seis"], ["7", "sete"], ["8", "oito"], ["9", "nove"], ["10", "dez"]]
+        },
+        {
+          "type": "order",
+          "id": "w1d3-o1",
+          "words": ["são", "eles", "angolanos"],
+          "answer": "eles são angolanos",
+          "en": "They are Angolan."
+        },
+        {
+          "type": "order",
+          "id": "w1d3-o2",
+          "words": ["irmão", "meu", "é", "ele", "o"],
+          "answer": "ele é o meu irmão",
+          "en": "He is my brother."
+        },
+        {
+          "type": "order",
+          "id": "w1d3-o3",
+          "words": ["professora", "de", "inglês", "ela", "é"],
+          "answer": "ela é professora de inglês",
+          "en": "She is an English teacher."
+        },
+        {
+          "type": "match",
+          "id": "w1d3-m1",
+          "title": "Match the greeting to the moment",
+          "pairs": [["Bom dia", "manhã"], ["Boa tarde", "tarde (depois das 12h)"], ["Boa noite", "noite"], ["Tchau / Adeus", "quando vamos embora"]]
+        }
+      ]
+    },
+    {
+      "id": "b1w1d4",
+      "day": 4,
+      "kind": "conversa",
+      "title": "A vizinha",
+      "subtitle": "Talk to Dona Rosa, your neighbour. Choose your words.",
+      "minutes": 8,
+      "activities": [
+        {
+          "type": "card",
+          "id": "w1d4-respeito",
+          "title": "Respeito: talking to elders",
+          "body": "In Angola, an older woman is often called Dona (Dona Rosa) or mais velha. An older man is o senhor or mais velho. Greet elders first and use você or o senhor / a senhora, never tu."
+        },
+        {
+          "type": "branch",
+          "id": "w1d4-branch",
+          "title": "21:00. Dona Rosa is at her door.",
+          "who": "Dona Rosa",
+          "steps": [
+            {
+              "npc": "Boa noite! Tudo bem?",
+              "en": "Good evening! All good?",
+              "options": [
+                { "text": "Boa noite, Dona Rosa! Tudo bem, obrigado.", "ok": true, "feedback": "Perfect. Night, so boa noite, and you used Dona. Very respectful." },
+                { "text": "Bom dia! Tudo bem.", "ok": false, "feedback": "It's 21:00. After dark we say boa noite." },
+                { "text": "Tchau!", "ok": false, "feedback": "Tchau is for leaving. You just arrived." }
+              ]
+            },
+            {
+              "npc": "Você é novo no bairro?",
+              "en": "Are you new in the neighbourhood?",
+              "options": [
+                { "text": "Sim, eu és novo.", "ok": false, "feedback": "With eu we use sou: eu sou." },
+                { "text": "Sim, sou novo. Sou estudante de português.", "ok": true, "feedback": "Great. Eu sou → sou. You can drop eu: Portuguese verbs already say who." },
+                { "text": "Sim, nós é novo.", "ok": false, "feedback": "Nós goes with somos, and here you're talking about yourself: sou." }
+              ]
+            },
+            {
+              "npc": "Eu sou a Rosa. Sou professora reformada.",
+              "en": "I'm Rosa. I'm a retired teacher.",
+              "options": [
+                { "text": "Olá, Rosa! Tu és fixe.", "ok": false, "feedback": "Too casual for an elder. Tu and \"fixe\" (cool) are for friends." },
+                { "text": "Muito prazer, Dona Rosa!", "ok": true, "feedback": "Muito prazer + Dona: warm and respectful." },
+                { "text": "Boa tarde, professora.", "ok": false, "feedback": "Nice respect, but it's night: boa noite." }
+              ]
+            },
+            {
+              "npc": "Hoje é sexta-feira. Amanhã é...?",
+              "en": "Today is Friday. Tomorrow is...?",
+              "options": [
+                { "text": "Amanhã é quinta-feira.", "ok": false, "feedback": "Quinta-feira is Thursday, the day before." },
+                { "text": "Amanhã é domingo.", "ok": false, "feedback": "Close. Domingo comes after sábado." },
+                { "text": "Amanhã é sábado. Fim de semana!", "ok": true, "feedback": "Sábado. Fim de semana, finally." }
+              ]
+            },
+            {
+              "npc": "Bem, vou dormir. Boa noite!",
+              "en": "Well, I'm going to sleep. Good night!",
+              "options": [
+                { "text": "Boa noite! Até amanhã!", "ok": true, "feedback": "Boa noite works for hello and goodbye at night. Até amanhã = see you tomorrow." },
+                { "text": "Olá!", "ok": false, "feedback": "Olá is hello. She is leaving." },
+                { "text": "Bom dia!", "ok": false, "feedback": "Bom dia is for the morning." }
+              ]
+            }
+          ]
+        },
+        { "type": "repeat", "id": "w1d4-r1", "pt": "Boa noite, Dona Rosa! Até amanhã!", "en": "Good night, Dona Rosa! See you tomorrow!" }
+      ]
+    },
+    {
+      "id": "b1w1d5",
+      "day": 5,
+      "kind": "missao",
+      "title": "Bom dia, Luanda",
+      "subtitle": "Mission. One full day in the city. Score 70% to unlock week 2.",
+      "minutes": 12,
+      "activities": [
+        {
+          "type": "choice",
+          "id": "w1d5-c1",
+          "question": "07:15. You walk into the market at Roque Santeiro. You say:",
+          "options": ["Boa noite!", "Bom dia!", "Adeus!"],
+          "answer": 1
+        },
+        {
+          "type": "gap",
+          "id": "w1d5-g1",
+          "before": "A zungueira says: \"Eu",
+          "after": "a Maria. Bem-vinda!\"",
+          "options": ["sou", "é", "são"],
+          "answer": "sou",
+          "en": "I am Maria. Welcome!"
+        },
+        {
+          "type": "type",
+          "id": "w1d5-t1",
+          "prompt": "You buy 3 mangoes. Write the number in words: Comprei 3 mangas.",
+          "answers": ["três", "tres"],
+          "en": "three"
+        },
+        {
+          "type": "type",
+          "id": "w1d5-t2",
+          "prompt": "The candongueiro has 10 people. Write the number in words.",
+          "answers": ["dez"],
+          "en": "ten"
+        },
+        {
+          "type": "choice",
+          "id": "w1d5-c2",
+          "question": "15:00. You arrive at the bank. You say:",
+          "options": ["Boa tarde!", "Bom dia!", "Boa noite!"],
+          "answer": 0
+        },
+        {
+          "type": "gap",
+          "id": "w1d5-g2",
+          "before": "The guard: \"Vocês",
+          "after": "irmãos?\"",
+          "options": ["somos", "são", "é"],
+          "answer": "são",
+          "en": "Are you brothers?"
+        },
+        {
+          "type": "gap",
+          "id": "w1d5-g3",
+          "before": "Hoje é quinta-feira. Amanhã é",
+          "after": ".",
+          "options": ["quarta-feira", "sexta-feira", "sábado"],
+          "answer": "sexta-feira",
+          "en": "Today is Thursday. Tomorrow is Friday."
+        },
+        {
+          "type": "truefalse",
+          "id": "w1d5-tf1",
+          "statement": "\"Boa tarde\" is used after 12:00.",
+          "answer": true
+        },
+        {
+          "type": "truefalse",
+          "id": "w1d5-tf2",
+          "statement": "With an elder you don't know, \"tu\" is the polite choice.",
+          "answer": false,
+          "explain": "Use você or o senhor / a senhora. Tu is for friends and family."
+        },
+        {
+          "type": "order",
+          "id": "w1d5-o1",
+          "words": ["novo", "você", "na", "é", "cidade"],
+          "answer": "você é novo na cidade",
+          "en": "You are new in the city."
+        },
+        {
+          "type": "choice",
+          "id": "w1d5-c3",
+          "question": "21:30. You leave a friend's house. You say:",
+          "options": ["Bom dia!", "Boa noite! Até amanhã!", "Olá!"],
+          "answer": 1
+        },
+        {
+          "type": "write",
+          "id": "w1d5-w1",
+          "prompt": "Introduce yourself to Isa in 3 short sentences.",
+          "checklist": ["A greeting (Bom dia / Boa tarde / Boa noite)", "Your name: Eu sou o / a ...", "What you are: Sou estudante / médico / ..."],
+          "model": "Boa tarde! Eu sou a Anna. Sou engenheira. Sou estudante de português."
+        }
+      ]
+    }
+  ],
+  "phrases": [
+    { "id": "p-bomdia", "pt": "Bom dia", "en": "Good morning" },
+    { "id": "p-boatarde", "pt": "Boa tarde", "en": "Good afternoon" },
+    { "id": "p-boanoite", "pt": "Boa noite", "en": "Good evening / good night" },
+    { "id": "p-tchau", "pt": "Tchau, até logo", "en": "Bye, see you later" },
+    { "id": "p-ateamanha", "pt": "Até amanhã", "en": "See you tomorrow" },
+    { "id": "p-prazer", "pt": "Muito prazer", "en": "Very nice to meet you" },
+    { "id": "p-tudobem", "pt": "Tudo bem?", "en": "All good?" },
+    { "id": "p-eusou", "pt": "Eu sou estudante", "en": "I am a student" },
+    { "id": "p-nossomos", "pt": "Nós somos vizinhos", "en": "We are neighbours" },
+    { "id": "p-hoje", "pt": "Hoje é segunda-feira", "en": "Today is Monday" },
+    { "id": "p-sabado", "pt": "sábado", "en": "Saturday" },
+    { "id": "p-domingo", "pt": "domingo", "en": "Sunday" },
+    { "id": "p-pao", "pt": "pão", "en": "bread" },
+    { "id": "p-irmao", "pt": "irmão", "en": "brother" },
+    { "id": "p-tres", "pt": "três", "en": "three" },
+    { "id": "p-oito", "pt": "oito", "en": "eight" }
+  ]
+}
